@@ -56,11 +56,11 @@ Options:
 
 ## Example
 
-***Input file*** 
+**Input file** 
    
    ```test.txt```
 
-***Type on command line*** 
+**Type on command line** 
    
    ```node pajama-ssg -i test.txt -s https://cdn.jsdelivr.net/npm/water.css@2/out/water.css```
    (I used water.css)
@@ -80,11 +80,13 @@ Options:
   “To Dartmoor; to King’s Pyland.”
 
   I was not surprised. Indeed, my only wonder was that he had not already been mixed up in this extraordinary case, which was the one topic of conversation through the length and breadth of England.
+  
    ```
   
   
   
- **./dist/test.html**
+  
+**./dist/test.html**
   ```sh
   <!DOCTYPE html>
 <html lang="en">
