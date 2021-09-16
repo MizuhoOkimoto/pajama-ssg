@@ -1,5 +1,5 @@
 # Pajama-ssg :zzz:
-##### This is a Simple Static Site Generator (SSG) version_0.1.0
+### This is a Simple Static Site Generator (SSG) version_0.1.0
 All you have to do is provide the content in a text file, type the filename on the command line and run it! This Pajama-ssg will automatically convert it to an HTML file. It's so simple and easy that you can start creating web pages right away, even in your pajamas!
 
 ## Features
@@ -12,46 +12,53 @@ All you have to do is provide the content in a text file, type the filename on t
 ## Option Features
 - type ```-s``` or ```-stylesheet``` on the command line, it will be converted to a style tag link.
 - By installing Prettier, the converted HTML will be formatted
+
   ```$ npm install --save-dev prettier```
 
 ## Installation
 1. Clone the repo
+
    ```$ git clone https://github.com/MizuhoOkimoto/pajama-ssg```
 2. Install Node.js
+ 
    ```$ npm install```
 3. Redirect to project directory
-   ```$ cd <pajama-ssg>```
+ 
+   ```$ cd <\pajama-ssg>```
 4. Install the tool locally
+ 
    ```$ npm i -g .```
 
 ## Usage
-```node pajama-ssg.js -i <path>```
+```node pajama-ssg -i <path>```
 	
-```node pajama-ssg.js -input <path>```
+```node pajama-ssg -input <path>```
 	
-```node pajama-ssg.js -i <folder name>```
+```node pajama-ssg -i <folder name>```
 	
-```node pajama-ssg.js -input <path> -stylesheet <URL>```
+```node pajama-ssg -input <path> -stylesheet <URL>```
 	
-```node pajama-ssg.js -i <path> -s <URL>```
+```node pajama-ssg -i <path> -s <URL>```
 
 	
 ## Help
 Options:
+```
+    -h, --help         Show help                              [boolean]
 	
-   > -h, --help      Show help                            [boolean]
+    -v                 version                                [boolean]
 	
-   > -v              version                              [boolean]
+    -i, --input        Folder/File input file location        [array] [required]
 	
-   > -i, --input     Folder/File input file location      [array] [required]
+    -s -stylesheet     Specify name of the stylesheet 
 	
-   > -s -stylesheet  Specify name of the stylesheet 
-	
+```
 
 ## Example
+
 ***Input file*** 
    
-   Example: test.txt
+   ```test.txt```
 
 ***Type on command line*** 
    
@@ -61,22 +68,20 @@ Options:
 
 
 **./test.txt**
-
+ ```
   Silver Blaze
-
 
 
   I am afraid, Watson, that I shall have to go,” said Holmes, as we
   sat down together to our breakfast one morning.
 
-
   “Go! Where to?”
-
 
   “To Dartmoor; to King’s Pyland.”
 
-
   I was not surprised. Indeed, my only wonder was that he had not already been mixed up in this extraordinary case, which was the one topic of conversation through the length and breadth of England.
+   ```
+  
   
   
  **./dist/test.html**
