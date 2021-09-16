@@ -1,0 +1,7 @@
+Pajama Static Site Generator
+
+
+Why is it "pajama"?
+
+I made a simple&easy open source static site generator.
+You can create a HTML file in 3 mins after you get up!
