@@ -39,7 +39,7 @@ Options:
 ## Example
 Input file: test.txt
 Enter on command line:  node pajama-ssg -i test.txt
-> ./test.txt
+**./test.txt**
   Silver Blaze
 
 
@@ -52,7 +52,7 @@ Enter on command line:  node pajama-ssg -i test.txt
 
   I was not surprised. Indeed, my only wonder was that he had not already been mixed up in this extraordinary case, which was the one topic of conversation through the length and breadth of England.
   
- > ./dist/test.html
+ ** ./dist/test.html**
   ```sh
   <!DOCTYPE html>
 <html lang="en">
