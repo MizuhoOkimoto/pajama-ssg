@@ -7,7 +7,7 @@ var argv = require("yargs/yargs")(process.argv.slice(2))
   .help("h")
   .alias("h", "help")
   .alias("s", "stylesheet")
-  .version("v", "version", "v0.1.0").argv;
+  .version("v", "version", "pajama-ssg v0.1.0").argv;
 
 var fs = require("fs");
 const prettier = require("prettier");
