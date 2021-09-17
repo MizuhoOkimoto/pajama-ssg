@@ -25,9 +25,7 @@ All you have to do is provide the content in a text file, type the filename on t
 3. Redirect to project directory
  
    ```$cd <\pajama-ssg>```
-4. Install the tool locally
- 
-   ```$npm i -g .```
+
 
 ## Usage
 ```$node pajama-ssg -i <path>```
