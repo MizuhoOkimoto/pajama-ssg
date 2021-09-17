@@ -7,7 +7,7 @@ All you have to do is provide the content in a text file, type the filename on t
 - Read .txt files inside folder(s) and generate HTML file(s)
 - All generated HTML files are stored in the dist folder
 - Convert the file name as the title in the head tag
-- Converts the first line in the .txt file as an h1 tag
+- Convert the first line in the .txt file as an h1 tag
 
 ## Option Features
 - type ```-s``` or ```-stylesheet``` on the command line, it will be converted to a style tag link.
