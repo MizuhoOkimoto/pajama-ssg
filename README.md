@@ -13,32 +13,32 @@ All you have to do is provide the content in a text file, type the filename on t
 - type ```-s``` or ```-stylesheet``` on the command line, it will be converted to a style tag link.
 - By installing Prettier, the converted HTML will be formatted
 
-  ```$ npm install --save-dev prettier```
+  ```$npm install --save-dev prettier```
 
 ## Installation
 1. Clone the repo
 
-   ```$ git clone https://github.com/MizuhoOkimoto/pajama-ssg```
+   ```$git clone https://github.com/MizuhoOkimoto/pajama-ssg```
 2. Install Node.js
  
-   ```$ npm install```
+   ```$npm install```
 3. Redirect to project directory
  
-   ```$ cd <\pajama-ssg>```
+   ```$cd <\pajama-ssg>```
 4. Install the tool locally
  
-   ```$ npm i -g .```
+   ```$npm i -g .```
 
 ## Usage
-```node pajama-ssg -i <path>```
+```$node pajama-ssg -i <path>```
 	
-```node pajama-ssg -input <path>```
+```$node pajama-ssg -input <path>```
 	
-```node pajama-ssg -i <folder name>```
+```$node pajama-ssg -i <folder name>```
 	
-```node pajama-ssg -input <path> -stylesheet <URL>```
+```$node pajama-ssg -input <path> -stylesheet <URL>```
 	
-```node pajama-ssg -i <path> -s <URL>```
+```$node pajama-ssg -i <path> -s <URL>```
 
 	
 ## Help
