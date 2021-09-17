@@ -50,7 +50,7 @@ Options:
 	
     -i, --input        Folder/File input file location        [array] [required]
 	
-    -s -stylesheet     Specify name of the stylesheet 
+    -s -stylesheet     Specify thr name of the stylesheet 
 	
 ```
 
@@ -60,7 +60,7 @@ Options:
    
    ```test.txt```
 
-**Type on command line** 
+**Type the on command line** 
    
    ```node pajama-ssg -i test.txt -s https://cdn.jsdelivr.net/npm/water.css@2/out/water.css```
    (I used water.css)
