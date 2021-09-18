@@ -43,7 +43,7 @@ fs.mkdir("./dist", (err) => {
 // Read files/lines
 argv.i.forEach((input) => {
   var stats = fs.statSync(input);
-  console.log("Is txt file in a directory ? " + stats.isDirectory());
+  // console.log("Is txt file in a directory ? " + stats.isDirectory());
 
   if (stats.isDirectory()) {
     files = fs.readdirSync("./" + input);
@@ -67,7 +67,7 @@ argv.i.forEach((input) => {
             <html lang="en">
             <head>
               <meta charset="utf-8">
-              <link rel="stylesheet" type="text/css" href="please add your css path" />
+              <link rel="stylesheet" type="text/css" href="please_add_your_css_path" />
               <title>${title}</title>
               <meta name="viewport" content="width=device-width, initial-scale=1">
             </head>
@@ -124,7 +124,7 @@ argv.i.forEach((input) => {
             <html lang="en">
             <head>
               <meta charset="utf-8">
-              <link rel="stylesheet" type="text/css" href="please add your css path" />
+              <link rel="stylesheet" type="text/css" href="please_add_your_css_path" />
               <title>${title}</title>
               <meta name="viewport" content="width=device-width, initial-scale=1">
             </head>
