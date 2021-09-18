@@ -44,7 +44,7 @@ Options:
 ```
     -h, --help         Show help                              [boolean]
 	
-    -v                 version                                [boolean]
+    -v, -version       version                                [boolean]
 	
     -i, --input        Folder/File input file location        [array] [required]
 	
