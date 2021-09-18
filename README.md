@@ -48,7 +48,7 @@ Options:
 	
     -i, --input        Folder/File input file location        [array] [required]
 	
-    -s -stylesheet     Specify thr name of the stylesheet 
+    -s -stylesheet     Specify the name of the stylesheet 
 	
 ```
 
