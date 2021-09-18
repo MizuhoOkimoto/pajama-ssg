@@ -25,9 +25,7 @@ All you have to do is provide the content in a text file, type the filename on t
 3. Redirect to project directory
  
    ```$cd <\pajama-ssg>```
-4. Install the tool locally
- 
-   ```$npm i -g .```
+
 
 ## Usage
 ```$node pajama-ssg -i <path>```
@@ -50,7 +48,7 @@ Options:
 	
     -i, --input        Folder/File input file location        [array] [required]
 	
-    -s -stylesheet     Specify name of the stylesheet 
+    -s -stylesheet     Specify thr name of the stylesheet 
 	
 ```
 
@@ -60,7 +58,7 @@ Options:
    
    ```test.txt```
 
-**Type on command line** 
+**Type the on command line** 
    
    ```node pajama-ssg -i test.txt -s https://cdn.jsdelivr.net/npm/water.css@2/out/water.css```
    (I used water.css)
