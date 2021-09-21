@@ -10,33 +10,33 @@ All you have to do is provide the content in a text file, type the filename on t
 - Convert the first line in the .txt file as an h1 tag
 
 ## Option Features
-- type ```-s``` or ```-stylesheet``` on the command line, it will be converted to a style tag link.
+- type `-s` or `-stylesheet` on the command line, it will be converted to a style tag link.
 - By installing Prettier, the converted HTML will be formatted
 
-  ```$npm install --save-dev prettier```
+  `$npm install --save-dev prettier`
 
 ## Installation
 1. Clone the repo
 
-   ```$git clone https://github.com/MizuhoOkimoto/pajama-ssg```
+   `$git clone https://github.com/MizuhoOkimoto/pajama-ssg`
 2. Install Node.js
  
-   ```$npm install```
+   `$npm install`
 3. Redirect to project directory
  
-   ```$cd <\pajama-ssg>```
+   `$cd <\pajama-ssg>`
 
 
 ## Usage
-```$node pajama-ssg -i <path>```
+`$node pajama-ssg -i <path>`
 	
-```$node pajama-ssg -input <path>```
+`$node pajama-ssg -input <path>`
 	
-```$node pajama-ssg -i <folder name>```
+`$node pajama-ssg -i <folder name>`
 	
-```$node pajama-ssg -input <path> -stylesheet <URL>```
+`$node pajama-ssg -input <path> -stylesheet <URL>`
 	
-```$node pajama-ssg -i <path> -s <URL>```
+`$node pajama-ssg -i <path> -s <URL>`
 
 	
 ## Help
@@ -56,11 +56,11 @@ Options:
 
 **Input file** 
    
-   ```test.txt```
+   `test.txt`
 
 **Type the on command line** 
    
-   ```node pajama-ssg -i test.txt -s https://cdn.jsdelivr.net/npm/water.css@2/out/water.css```
+   `node pajama-ssg -i test.txt -s https://cdn.jsdelivr.net/npm/water.css@2/out/water.css`
    (I used water.css)
 
 
@@ -85,7 +85,7 @@ Options:
   
   
 **./dist/test.html**
-  ```sh
+  ```html
   <!DOCTYPE html>
 <html lang="en">
   <head>
