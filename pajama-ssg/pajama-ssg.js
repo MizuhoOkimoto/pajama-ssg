@@ -52,8 +52,10 @@ argv.i.forEach((input) => {
     files = fs.readdirSync("./" + input);
 console.log(files)
     files.forEach((file) => {
+      if(input.includes(".txt")){
       var lines = [];
       var title = file.split(".txt").shift();
+
 
       fs.readFile(`${input}/${file}`, "utf8", (err, data) => {
         if (err) {
@@ -107,6 +109,74 @@ console.log(files)
           });
         }
       });
+
+    }else{
+
+
+
+
+      var lines = [];
+      var title = file.split(".md").shift();
+
+
+      fs.readFile(`${input}/${file}`, "utf8", (err, data) => {
+        if (err) {
+          return console.log(err);
+        } else {
+          lines = data.toString().split(/\r?\n\r?\n/);
+          var titleName = `<h1>${lines.shift()}</h1>`;
+          var text = "";
+          lines.forEach((line) => (text = text + `\n<p>${line}</p>`));
+
+          if (argv.s == undefined) {
+            var template = `
+            <!doctype html>
+            <html lang="en">
+            <head>
+              <meta charset="utf-8">
+              <link rel="stylesheet" type="text/css" href="please add your css path" />
+              <title>${title}</title>
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+            </head>
+            <body>
+              ${titleName}
+              ${text}
+            </body>
+            </html>
+            `;
+          } else {
+            var template = `
+              <!doctype html>
+              <html lang="en">
+              <head>
+                <meta charset="utf-8">
+                <link rel="stylesheet" type="text/css" href="${argv.s}" />
+                <title>${title}</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+              </head>
+              <body>
+                ${titleName}
+                ${text}
+              </body>
+              </html>
+              `;
+          }
+          const compTemp = prettier.format(template, { parser: "html" });
+          fs.writeFile(`./dist/${title}.html`, compTemp, function (err) {
+            if (err) {
+              return console.log(err);
+            } else {
+              console.log(title + ".html was saved!");
+            }
+          });
+        }
+      });
+
+
+
+
+    }
+
     }); 
 
 
