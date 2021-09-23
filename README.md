@@ -8,7 +8,7 @@ All you have to do is provide the content in a text file, type the filename on t
 - All generated HTML files are stored in the dist folder
 - Convert the file name as the title in the head tag
 - Converts the first line in the .txt file as an h1 tag
-
+- (UPDATED)Convert Markdown files into HTML(With italic and bold functionality)
 ## Option Features
 - type ```-s``` or ```-stylesheet``` on the command line, it will be converted to a style tag link.
 - By installing Prettier, the converted HTML will be formatted
