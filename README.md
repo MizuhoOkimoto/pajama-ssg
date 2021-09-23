@@ -28,15 +28,18 @@ All you have to do is provide the content in a text file, type the filename on t
 
 
 ## Usage
-`$node pajama-ssg -i <path>`
-	
-`$node pajama-ssg -input <path>`
+`$node pajama-ssg -i <path>` or `$node pajama-ssg -input <path>`
+
+	These allows you to the text file to a HTML file. Please type file name into the <path>.
 	
 `$node pajama-ssg -i <folder name>`
 	
-`$node pajama-ssg -input <path> -stylesheet <URL>`
+	If your text file is in a folder, you can type folder name instead of text file name. 
+	This SSG tool checkes inside the folder.
 	
-`$node pajama-ssg -i <path> -s <URL>`
+`$node pajama-ssg -input <path> -stylesheet <URL>` or `$node pajama-ssg -i <path> -s <URL>`
+	
+	You are able to add stylesheet. Please type the URL or path into the <URL>.
 
 	
 ## Help
