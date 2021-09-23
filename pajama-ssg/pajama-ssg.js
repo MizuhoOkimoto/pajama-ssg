@@ -45,18 +45,14 @@ argv.i.forEach((input) => {
   var stats = fs.statSync(input);
   console.log("Is txt file in a directory ? " + stats.isDirectory());
 
-  if (stats.isDirectory()) {
-
-
-
+  if (stats.isDirectory()){
     files = fs.readdirSync("./" + input);
-console.log(files)
+
     files.forEach((file) => {
-      if(input.includes(".txt")){
+      if(file.includes(".txt")){
       var lines = [];
       var title = file.split(".txt").shift();
 
-
       fs.readFile(`${input}/${file}`, "utf8", (err, data) => {
         if (err) {
           return console.log(err);
@@ -72,7 +68,7 @@ console.log(files)
             <html lang="en">
             <head>
               <meta charset="utf-8">
-              <link rel="stylesheet" type="text/css" href="please add your css path" />
+              <link rel="stylesheet" type="text/css" href="please_add_your_css_path" />
               <title>${title}</title>
               <meta name="viewport" content="width=device-width, initial-scale=1">
             </head>
@@ -109,58 +105,79 @@ console.log(files)
           });
         }
       });
-
     }else{
-
-
-
-
+      
       var lines = [];
       var title = file.split(".md").shift();
-
-
+     
+      var template ;
       fs.readFile(`${input}/${file}`, "utf8", (err, data) => {
         if (err) {
           return console.log(err);
         } else {
           lines = data.toString().split(/\r?\n\r?\n/);
-          var titleName = `<h1>${lines.shift()}</h1>`;
+          // console.log(lines)
           var text = "";
-          lines.forEach((line) => (text = text + `\n<p>${line}</p>`));
 
-          if (argv.s == undefined) {
-            var template = `
-            <!doctype html>
-            <html lang="en">
-            <head>
-              <meta charset="utf-8">
-              <link rel="stylesheet" type="text/css" href="please add your css path" />
-              <title>${title}</title>
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-            </head>
-            <body>
-              ${titleName}
-              ${text}
-            </body>
-            </html>
-            `;
-          } else {
-            var template = `
-              <!doctype html>
-              <html lang="en">
-              <head>
-                <meta charset="utf-8">
-                <link rel="stylesheet" type="text/css" href="${argv.s}" />
-                <title>${title}</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-              </head>
-              <body>
-                ${titleName}
-                ${text}
-              </body>
-              </html>
-              `;
-          }
+          lines.forEach((line) =>{
+
+            if(line.includes("*")){
+              // console.log(line)
+              line = Array.from(new Set(line.split('*'))).toString();
+              let get = line.replace(",", ' ')
+              // console.log(get)
+              text += `\n<i>${get}</i>`;
+            }else if(line.includes("#")){
+              line = Array.from(new Set(line.split('#'))).toString();
+              let get = line.replace(",", ' ')
+              // console.log(get)
+              text += `\n<b>${get}</b>`;
+            }else{
+              text += `\n<p>${line}</p>`;
+            }
+            
+            // console.log(`1 ${line}`)
+  
+            if (argv.s == undefined) {
+               template = `
+                <!doctype html>
+                <html lang="en">
+                <head>
+                  <meta charset="utf-8">
+                  <link rel="stylesheet" type="text/css" href="please add your css path" />
+                  <title></title>
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                </head>
+                <body>
+                
+                  ${text}
+                </body>
+                </html>
+                `;
+            } else {
+               template = `
+                  <!doctype html>
+                  <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <link rel="stylesheet" type="text/css" href="${argv.s}" />
+                    <title></title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                  </head>
+                  <body>
+                 
+                    ${text}
+                  </body>
+                  </html>
+                  `;
+            }
+  
+  
+  
+          })
+
+
+
           const compTemp = prettier.format(template, { parser: "html" });
           fs.writeFile(`./dist/${title}.html`, compTemp, function (err) {
             if (err) {
@@ -171,21 +188,20 @@ console.log(files)
           });
         }
       });
-
 
 
 
     }
 
-    }); 
+
+    });
 
 
+    
+  }  else {
 
 
-  } else {
-
-
-    if(input.includes(".txt")){
+  if(input.includes(".txt")){
 
   
 
@@ -246,55 +262,83 @@ console.log(files)
       }
     });
 
-  }
-  else{
+  }else{
     
     var lines = [];
     var title = input.split(".md").shift();
-  
-
+   
+    var template ;
     fs.readFile(`${input}`, "utf8", (err, data) => {
+      // console.log(data)
       if (err) {
         return console.log(err);
       } else {
         lines = data.toString().split(/\r?\n\r?\n/);
-        var titleName = `<h1>${lines.shift()}</h1>`;
+        // console.log(lines)
         var text = "";
-        lines.forEach((line) => (text += `\n<p>${line}</p>`));
+        lines.forEach((line) =>{
 
-        if (argv.s == undefined) {
-          var template = `
-            <!doctype html>
-            <html lang="en">
-            <head>
-              <meta charset="utf-8">
-              <link rel="stylesheet" type="text/css" href="please add your css path" />
-              <title>${title}</title>
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-            </head>
-            <body>
-              ${titleName}
-              ${text}
-            </body>
-            </html>
-            `;
-        } else {
-          var template = `
+          if(line.includes("*")){
+            console.log(line)
+            line = Array.from(new Set(line.split('*'))).toString();
+            let get = line.replace(",", ' ')
+            console.log(get)
+            text += `\n<i>${get}</i>`;
+          }else if(line.includes("#")){
+            line = Array.from(new Set(line.split('#'))).toString();
+            let get = line.replace(",", ' ')
+            console.log(get)
+            text += `\n<b>${get}</b>`;
+          }else{
+            text += `\n<p>${line}</p>`;
+          }
+          
+          // console.log(`1 ${line}`)
+
+          if (argv.s == undefined) {
+             template = `
               <!doctype html>
               <html lang="en">
               <head>
                 <meta charset="utf-8">
-                <link rel="stylesheet" type="text/css" href="${argv.s}" />
-                <title>${title}</title>
+                <link rel="stylesheet" type="text/css" href="please add your css path" />
+                <title></title>
                 <meta name="viewport" content="width=device-width, initial-scale=1">
               </head>
               <body>
-                ${titleName}
+              
                 ${text}
               </body>
               </html>
               `;
-        }
+          } else {
+             template = `
+                <!doctype html>
+                <html lang="en">
+                <head>
+                  <meta charset="utf-8">
+                  <link rel="stylesheet" type="text/css" href="${argv.s}" />
+                  <title></title>
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                </head>
+                <body>
+               
+                  ${text}
+                </body>
+                </html>
+                `;
+          }
+
+
+
+        })
+
+
+       
+        
+        
+
+       
         const compTemp = prettier.format(template, { parser: "html" });
         fs.writeFile(`./dist/${title}.html`, compTemp, function (err) {
           if (err) {
