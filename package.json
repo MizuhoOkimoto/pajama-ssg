@@ -1,14 +1,14 @@
 {
   "name": "node-ssg",
   "version": "1.0.0",
-  "description": "",
+  "description": "SSG project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node ./src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mizuho Okimoto",
   "license": "MIT",
   "dependencies": {
     "front-matter": "^4.0.2",
