@@ -6,7 +6,7 @@ All you have to do is provide the content in a text file, type the filename on t
 
 ## Features
 
-- Generate static HTML file(s) from .txt and .md file(s)
+- Generate static HTML file(s) from .txt file(s)
 - Read .txt files inside folder(s) and generate HTML file(s)
 - All generated HTML files are stored in the dist folder
 - Convert the file name as the title in the head tag
