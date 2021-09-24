@@ -46,10 +46,11 @@ argv.i.forEach((input) => {
   var stats = fs.statSync(input);
   // console.log("Is txt file in a directory ? " + stats.isDirectory());
 
-  if (stats.isDirectory()) {
+  if (stats.isDirectory()){
     files = fs.readdirSync("./" + input);
 
     files.forEach((file) => {
+      if(file.includes(".txt")){
       var lines = [];
       var title = file.split(".txt").shift();
 
@@ -107,10 +108,109 @@ argv.i.forEach((input) => {
           });
         }
       });
+    }else{
+      
+      var lines = [];
+      var title = file.split(".md").shift();
+     
+      var template ;
+      fs.readFile(`${input}/${file}`, "utf8", (err, data) => {
+        if (err) {
+          return console.log(err);
+        } else {
+          lines = data.toString().split(/\r?\n\r?\n/);
+          // console.log(lines)
+          var text = "";
+
+          lines.forEach((line) =>{
+
+            if(line.includes("*")){
+              // console.log(line)
+              line = Array.from(new Set(line.split('*'))).toString();
+              let get = line.replace(",", ' ')
+              // console.log(get)
+              text += `\n<i>${get}</i>`;
+            }else if(line.includes("#")){
+              line = Array.from(new Set(line.split('#'))).toString();
+              let get = line.replace(",", ' ')
+              // console.log(get)
+              text += `\n<b>${get}</b>`;
+            }else{
+              text += `\n<p>${line}</p>`;
+            }
+            
+            // console.log(`1 ${line}`)
+  
+            if (argv.s == undefined) {
+               template = `
+                <!doctype html>
+                <html lang="en">
+                <head>
+                  <meta charset="utf-8">
+                  <link rel="stylesheet" type="text/css" href="please add your css path" />
+                  <title></title>
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                </head>
+                <body>
+                
+                  ${text}
+                </body>
+                </html>
+                `;
+            } else {
+               template = `
+                  <!doctype html>
+                  <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <link rel="stylesheet" type="text/css" href="${argv.s}" />
+                    <title></title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                  </head>
+                  <body>
+                 
+                    ${text}
+                  </body>
+                  </html>
+                  `;
+            }
+  
+  
+  
+          })
+
+
+
+          const compTemp = prettier.format(template, { parser: "html" });
+          fs.writeFile(`./dist/${title}.html`, compTemp, function (err) {
+            if (err) {
+              return console.log(err);
+            } else {
+              console.log(title + ".html was saved!");
+            }
+          });
+        }
+      });
+
+
+
+    }
+
+
     });
-  } else {
+
+
+    
+  }  else {
+
+
+  if(input.includes(".txt")){
+
+  
+
     var lines = [];
     var title = input.split(".txt").shift();
+  
 
     fs.readFile(`${input}`, "utf8", (err, data) => {
       if (err) {
@@ -166,5 +266,94 @@ argv.i.forEach((input) => {
         });
       }
     });
+
+  }else{
+    
+    var lines = [];
+    var title = input.split(".md").shift();
+   
+    var template ;
+    fs.readFile(`${input}`, "utf8", (err, data) => {
+      // console.log(data)
+      if (err) {
+        return console.log(err);
+      } else {
+        lines = data.toString().split(/\r?\n\r?\n/);
+        // console.log(lines)
+        var text = "";
+        lines.forEach((line) =>{
+
+          if(line.includes("*")){
+            console.log(line)
+            line = Array.from(new Set(line.split('*'))).toString();
+            let get = line.replace(",", ' ')
+            console.log(get)
+            text += `\n<i>${get}</i>`;
+          }else if(line.includes("#")){
+            line = Array.from(new Set(line.split('#'))).toString();
+            let get = line.replace(",", ' ')
+            console.log(get)
+            text += `\n<b>${get}</b>`;
+          }else{
+            text += `\n<p>${line}</p>`;
+          }
+          
+          // console.log(`1 ${line}`)
+
+          if (argv.s == undefined) {
+             template = `
+              <!doctype html>
+              <html lang="en">
+              <head>
+                <meta charset="utf-8">
+                <link rel="stylesheet" type="text/css" href="please add your css path" />
+                <title></title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+              </head>
+              <body>
+              
+                ${text}
+              </body>
+              </html>
+              `;
+          } else {
+             template = `
+                <!doctype html>
+                <html lang="en">
+                <head>
+                  <meta charset="utf-8">
+                  <link rel="stylesheet" type="text/css" href="${argv.s}" />
+                  <title></title>
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                </head>
+                <body>
+               
+                  ${text}
+                </body>
+                </html>
+                `;
+          }
+
+
+
+        })
+
+
+       
+        
+        
+
+       
+        const compTemp = prettier.format(template, { parser: "html" });
+        fs.writeFile(`./dist/${title}.html`, compTemp, function (err) {
+          if (err) {
+            return console.log(err);
+          } else {
+            console.log(title + ".html was saved!");
+          }
+        });
+      }
+    });
+  }
   }
 });
