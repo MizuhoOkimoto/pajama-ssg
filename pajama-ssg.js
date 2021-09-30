@@ -7,7 +7,8 @@ var argv = require("yargs/yargs")(process.argv.slice(2))
   .help("h")
   .alias("h", "help")
   .alias("s", "stylesheet")
-  .version("v", "version", "pajama-ssg v0.1.0").argv;
+  .version("v", "version", "pajama-ssg v0.1.0")
+  .alias("l","lang").argv;
 
 var fs = require("fs");
 const prettier = require("prettier");
@@ -63,11 +64,12 @@ argv.i.forEach((input) => {
           var titleName = `<h1>${lines.shift()}</h1>`;
           var text = "";
           lines.forEach((line) => (text = text + `\n<p>${line}</p>`));
+          var language = argv.l?argv.l:"en-CA";
 
           if (argv.s == undefined) {
             var template = `
             <!doctype html>
-            <html lang="en">
+            <html lang="${language}">
             <head>
               <meta charset="utf-8">
               <link rel="stylesheet" type="text/css" href="please_add_your_css_path" />
@@ -83,7 +85,7 @@ argv.i.forEach((input) => {
           } else {
             var template = `
               <!doctype html>
-              <html lang="en">
+              <html lang="${language}">
               <head>
                 <meta charset="utf-8">
                 <link rel="stylesheet" type="text/css" href="${argv.s}" />
@@ -221,11 +223,12 @@ argv.i.forEach((input) => {
         var titleName = `<h1>${lines.shift()}</h1>`;
         var text = "";
         lines.forEach((line) => (text += `\n<p>${line}</p>`));
+        var language = argv.l?argv.l:"en-CA";
 
         if (argv.s == undefined) {
           var template = `
             <!doctype html>
-            <html lang="en">
+            <html lang="${language}">
             <head>
               <meta charset="utf-8">
               <link rel="stylesheet" type="text/css" href="please_add_your_css_path" />
@@ -241,7 +244,7 @@ argv.i.forEach((input) => {
         } else {
           var template = `
               <!doctype html>
-              <html lang="en">
+              <html lang="${language}">
               <head>
                 <meta charset="utf-8">
                 <link rel="stylesheet" type="text/css" href="${argv.s}" />
