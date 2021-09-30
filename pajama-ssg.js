@@ -135,7 +135,11 @@ argv.i.forEach((input) => {
               let get = line.replace(",", ' ')
               // console.log(get)
               text += `\n<b>${get}</b>`;
-            }else{
+            }else if(line.includes("---")) {
+              let get = line.replace("---", '<hr>');
+              text += `\n${get}`;
+            }
+            else {
               text += `\n<p>${line}</p>`;
             }
             
@@ -294,7 +298,11 @@ argv.i.forEach((input) => {
             let get = line.replace(",", ' ')
             console.log(get)
             text += `\n<b>${get}</b>`;
-          }else{
+          }else if(line.includes("---")) {
+            let get = line.replace("---", '<hr>');
+            text += `\n${get}`;
+          }
+          else {
             text += `\n<p>${line}</p>`;
           }
           
