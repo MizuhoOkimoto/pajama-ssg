@@ -10,12 +10,13 @@ All you have to do is provide the content in a text file, type the filename on t
 - Read .txt files inside folder(s) and generate HTML file(s)
 - All generated HTML files are stored in the dist folder
 - Convert the file name as the title in the head tag
-- Converts the first line in the .txt file as an h1 tag
-- (UPDATED)Convert Markdown files into HTML(With italic and bold functionality)
+- Convert the first line in the .txt file as an h1 tag
+- [Update] Convert Markdown files into HTML(With italic, bold, and horizontal rule)
 
 ## Option Features
 
-- type `-s` or `-stylesheet` on the command line, it will be converted to a style tag link.
+- type `-s` or `-stylesheet` on the command line, it will be converted to a style tag link
+- [Update] type `-l` or `-lang` on the command line, it will generate the lang attribute on the root <html> element
 - By installing Prettier, the converted HTML will be formatted
 
   `$npm install --save-dev prettier`
@@ -49,16 +50,11 @@ You are able to add stylesheet. Please type the URL or path into the <URL>.
 ## Help
 
 Options:
-
 ```
-    -h, --help         Show help                              [boolean]
-
-    -v, -version       version                                [boolean]
-
-    -i, --input        Folder/File input file location        [array] [required]
-
-    -s -stylesheet     Specify the name of the stylesheet
-
+  -i, --input       input file                               
+  -s, --stylesheet  input the path for generating the stylesheet path
+  -s, --lang        input the language for the lang attribute
+  -v                version                                        
 ```
 
 ## Example
