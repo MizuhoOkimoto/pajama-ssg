@@ -17,6 +17,7 @@ All you have to do is provide the content in a text file, type the filename on t
 
 - type `-s` or `-stylesheet` on the command line, it will be converted to a style tag link
 - [Update] type `-l` or `-lang` on the command line, it will generate the lang attribute on the root <html> element
+-type `-c` or `--config` on the command line, it will get the flag values from your config JSON file.
 - By installing Prettier, the converted HTML will be formatted
 
   `$npm install --save-dev prettier`
@@ -46,14 +47,17 @@ If your text file is in a folder, you can type folder name instead of text file 
 This SSG tool checkes inside the folder.
 `$node pajama-ssg -input <path> -stylesheet <URL>` or `$node pajama-ssg -i <path> -s <URL>`
 You are able to add stylesheet. Please type the URL or path into the <URL>.
+`$node pajama-ssg -c config-file.json`
+You are able to pass a configuration JSON file.
 
 ## Help
 
 Options:
 ```
-  -i, --input       input file                               
+  -i, --input       input file       
+  -c, --config      receive a config JSON file and get flags from it.                 
   -s, --stylesheet  input the path for generating the stylesheet path
-  -s, --lang        input the language for the lang attribute
+  -l, --lang        input the language for the lang attribute
   -v                version                                        
 ```
 
