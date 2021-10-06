@@ -6,7 +6,7 @@ var argv = require("yargs/yargs")(process.argv.slice(2))
     describe: 'input file'
   })
   .array("i")
-  .demandOption(["i"])
+  //.demandOption(["i"])
   .option('help', {
     alias: 'h',
     describe: 'display command options'
@@ -16,9 +16,14 @@ var argv = require("yargs/yargs")(process.argv.slice(2))
     describe: 'input the path for generating the stylesheet path'
   })
   .option('lang', {
-    alias: 's',
+    alias: 'l',
     describe: 'input the language for the lang attribute'
+  }) 
+  .option('config', {
+    alias: 'c',
+    describe: "Read values from a Config JSON file",
   })
+
   .option('version', {
     alias: 'v',
     describe: 'this is version v0.1.0'
@@ -29,22 +34,24 @@ var argv = require("yargs/yargs")(process.argv.slice(2))
 var fs = require("fs");
 const prettier = require("prettier");
 
-var path = "./dist";
+const path = require("path");
 
-if (fs.existsSync("./dist")) {
-  if (fs.existsSync("./dist")) {
-    const files = fs.readdirSync(path);
+var distPath = "./dist";
+
+if (fs.existsSync(distPath)) {
+  if (fs.existsSync(distPath)) {
+    const files = fs.readdirSync(distPath);
     if (files.length > 0) {
       files.forEach(function (filename) {
-        if (fs.statSync(path + "/" + filename).isDirectory()) {
-          removeDir(path + "/" + filename);
+        if (fs.statSync(distPath + "/" + filename).isDirectory()) {
+          removeDir(distPath + "/" + filename);
         } else {
-          fs.unlinkSync(path + "/" + filename);
+          fs.unlinkSync(distPath + "/" + filename);
         }
       });
-      fs.rmdirSync(path);
+      fs.rmdirSync(distPath);
     } else {
-      fs.rmdirSync(path);
+      fs.rmdirSync(distPath);
     }
   }
 }
@@ -58,8 +65,26 @@ fs.mkdir("./dist", (err) => {
   console.log("dist directory is created.");
 });
 
+if (argv.c) {
+  try {
+    const jsonFile = fs.readFileSync(path.normalize(argv.c));
+    const data = JSON.parse(jsonFile);
+    argv.i = [data.input];
+    argv.s = data.stylesheet;
+    argv.l = data.lang || "en-CA";
+  } catch (err) {
+    console.error("Error: Impossible to read from JSON file.");
+    process.exit(1);
+  }
+}
+
 // Read files/lines
 argv.i.forEach((input) => {
+  if(!fs.existsSync(input)){
+    console.error("Input is not a file or directory!");
+return;
+  }
+
   var stats = fs.statSync(input);
   // console.log("Is txt file in a directory ? " + stats.isDirectory());
 
