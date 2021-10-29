@@ -11,7 +11,7 @@ All you have to do is provide the content in a text file, type the filename on t
 - All generated HTML files are stored in the dist folder
 - Convert the file name as the title in the head tag
 - Convert the first line in the .txt file as an h1 tag
-- [Update] Convert Markdown files into HTML(With italic, bold, and horizontal rule)
+- Convert Markdown files into HTML(With italic, bold, and horizontal rule)
 
 ## Option Features
 
@@ -21,6 +21,8 @@ All you have to do is provide the content in a text file, type the filename on t
 - By installing Prettier, the converted HTML will be formatted
 
   `$npm install --save-dev prettier`
+- For Using full markdown feature, please install npm below after step 3 of the Installation.
+  `$npm install markdown-it --save`
 
 ## Installation
 
@@ -122,8 +124,8 @@ Options:
 Mizuho Okimoto
 
 - Github Repo: [MizuhoOkimoto](https://github.com/MizuhoOkimoto)
-- Blog: https://dev.to/okimotomizuho
-- Portofolio: https://www.okimotomizuho.com
+- Blog: [https://dev.to/okimotomizuho](https://dev.to/okimotomizuho)
+- Portofolio: [https://www.okimotomizuho.com](https://www.okimotomizuho.com)
 
 ## License
 

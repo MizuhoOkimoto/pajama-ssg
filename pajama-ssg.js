@@ -3,6 +3,8 @@ var fs = require("fs");
 const prettier = require("prettier");
 const path = require("path");
 var distPath = "./dist";
+var MarkdownIt = require('markdown-it'),
+    md = new MarkdownIt();
 
 var tempGenerate = require("./tempGenerator");
 
@@ -102,25 +104,8 @@ return;
           var text = "";
 
           lines.forEach((line) =>{
-
-            if(line.includes("*")){
-              // console.log(line)
-              line = Array.from(new Set(line.split('*'))).toString();
-              let get = line.replace(",", ' ')
-              // console.log(get)
-              text += `\n<i>${get}</i>`;
-            }else if(line.includes("#")){
-              line = Array.from(new Set(line.split('#'))).toString();
-              let get = line.replace(",", ' ')
-              // console.log(get)
-              text += `\n<b>${get}</b>`;
-            }else if(line.includes("---")) {
-              let get = line.replace("---", '<hr>');
-              text += `\n${get}`;
-            }
-            else {
-              text += `\n<p>${line}</p>`;
-            }
+            var result = md.render(line);
+            text += result;
             //replaced
             template = tempGenerate(argv.s, argv.l, title, titleName, text);
           })
@@ -185,26 +170,8 @@ return;
         // console.log(lines)
         var text = "";
         lines.forEach((line) =>{
-
-          if(line.includes("*")){
-            console.log(line)
-            line = Array.from(new Set(line.split('*'))).toString();
-            let get = line.replace(",", ' ')
-            console.log(get)
-            text += `\n<i>${get}</i>`;
-          }else if(line.includes("#")){
-            line = Array.from(new Set(line.split('#'))).toString();
-            let get = line.replace(",", ' ')
-            console.log(get)
-            text += `\n<b>${get}</b>`;
-          }else if(line.includes("---")) {
-            let get = line.replace("---", '<hr>');
-            text += `\n${get}`;
-          }
-          else {
-            text += `\n<p>${line}</p>`;
-          }
-          
+          var result = md.render(line);
+            text += result;
           //replaced
           template = tempGenerate(argv.s, argv.l, title, "", text);
         })
