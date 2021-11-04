@@ -17,10 +17,11 @@ All you have to do is provide the content in a text file, type the filename on t
 
 - type `-s` or `-stylesheet` on the command line, it will be converted to a style tag link
 - [Update] type `-l` or `-lang` on the command line, it will generate the lang attribute on the root <html> element
--type `-c` or `--config` on the command line, it will get the flag values from your config JSON file.
+  -type `-c` or `--config` on the command line, it will get the flag values from your config JSON file.
 - By installing Prettier, the converted HTML will be formatted
 
   `$npm install --save-dev prettier`
+
 - For Using full markdown feature, please install npm below after step 3 of the Installation.
   `$npm install markdown-it --save`
 
@@ -55,12 +56,13 @@ You are able to pass a configuration JSON file.
 ## Help
 
 Options:
+
 ```
-  -i, --input       input file       
-  -c, --config      receive a config JSON file and get flags from it.                 
+  -i, --input       input file
+  -c, --config      receive a config JSON file and get flags from it.
   -s, --stylesheet  input the path for generating the stylesheet path
   -l, --lang        input the language for the lang attribute
-  -v                version                                        
+  -v                version
 ```
 
 ## Example
@@ -110,8 +112,8 @@ Options:
     <h1>Silver Blaze</h1>
 
     <p>
-      I am afraid, Watson, that I shall have to go,” said Holmes, as we sat down together to our
-      breakfast one morning.
+      I am afraid, Watson, that I shall have to go,” said Holmes, as we sat down
+      together to our breakfast one morning.
     </p>
     <p>“Go! Where to?”</p>
     <p>“To Dartmoor; to King’s Pyland.”</p>
