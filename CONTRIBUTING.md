@@ -1,5 +1,30 @@
-# Pajama-ssg :zzz:
+# Contributing to Pajama-ssg
 
+✨ **Contributions are always welcome!** ✨<br>
+**Your contribution will invigorate this wonderful open source community and create even better ones!**
+
+## Pajama-ssg guidelines
+- Maintain Pajama-ssg quality
+- Fix problems that are important to users
+- Engage the community in working toward the best possible pajama-ssg
+
+## How to contribute?
+- Fork the Project
+- Clone this repo on your local machine (git clone https://github.com/MizuhoOkimoto/pajama-ssg.git)
+- Create your branch (git checkout -b issueNumber)
+- Add changed files (git add fileName)
+- Commit your changes (git commit -m 'Add GreatFeature')
+- Push to the branch (git push origin issueNumber)
+- Open a Pull Request
+
+## Before you commit, please check below
+- Please run `npm run prettier` to unify the code format
+- Please run `npx eslint <changedFileName>` to find coding errors
+
+I will review your Pull Request and get back to you!
+Please read trough the below, and install and try some 😊
+
+## What is Pajama-ssg?
 ### This is a Simple Static Site Generator (SSG) version_0.1.0
 
 All you have to do is provide the content in a text file, type the filename on the command line and run it! This Pajama-ssg will automatically convert it to an HTML file. It's so simple and easy that you can start creating web pages right away, even in your pajamas!
@@ -130,5 +155,4 @@ Mizuho Okimoto
 - Portofolio: [https://www.okimotomizuho.com](https://www.okimotomizuho.com)
 
 ## License
-
 This project is licensed under the MIT License - see the LICENSE.md file for details

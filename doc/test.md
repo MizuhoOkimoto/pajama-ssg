@@ -1,6 +1,6 @@
-* Silver Blaze *
+- Silver Blaze \*
 
-# Bold? 
+# Bold?
 
 I am afraid, Watson, that I shall have to go,” said Holmes, as we
 sat down together to our breakfast one morning.
