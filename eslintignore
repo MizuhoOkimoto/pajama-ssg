@@ -1,0 +1,6 @@
+# Ignore the build directories for next
+build
+coverage
+package.json
+package-lock
+node_modules
