@@ -1,7 +1,7 @@
-## Contributing to Pajama-ssg
+# Contributing to Pajama-ssg
 
 ✨ **Contributions are always welcome!** ✨<br>
-**Your contribution will invigorate this wonderful open source community and create even better ones.**
+**Your contribution will invigorate this wonderful open source community and create even better ones!**
 
 ## Pajama-ssg guidelines
 - Maintain Pajama-ssg quality
@@ -17,13 +17,17 @@
 - Push to the branch (git push origin issueNumber)
 - Open a Pull Request
 
-I will review your Pull Request and get back to you!
-Please read trough the below, and install and try some!
+## Before you commit, please check below:
+- Please run `npm run prettier` to unify the code format
+- Please run `npx eslint .` to find coding errors
 
+I will review your Pull Request and get back to you!
+Please read trough the below, and install and try some 😊
+
+## What is Pajama-ssg?
 ### This is a Simple Static Site Generator (SSG) version_0.1.0
 
 All you have to do is provide the content in a text file, type the filename on the command line and run it! This Pajama-ssg will automatically convert it to an HTML file. It's so simple and easy that you can start creating web pages right away, even in your pajamas!
-
 
 ## Features
 
