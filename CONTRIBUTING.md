@@ -17,9 +17,9 @@
 - Push to the branch (git push origin issueNumber)
 - Open a Pull Request
 
-## Before you commit, please check below:
+## Before you commit, please check below
 - Please run `npm run prettier` to unify the code format
-- Please run `npx eslint .` to find coding errors
+- Please run `npx eslint <changedFileName>` to find coding errors
 
 I will review your Pull Request and get back to you!
 Please read trough the below, and install and try some 😊
@@ -155,5 +155,4 @@ Mizuho Okimoto
 - Portofolio: [https://www.okimotomizuho.com](https://www.okimotomizuho.com)
 
 ## License
-
 This project is licensed under the MIT License - see the LICENSE.md file for details
