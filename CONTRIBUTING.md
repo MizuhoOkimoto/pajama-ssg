@@ -9,8 +9,10 @@
 - Engage the community in working toward the best possible pajama-ssg
 
 ## How to contribute?
+Please read trough the below, and install and try some first😊
 - Fork the Project
 - Clone this repo on your local machine (git clone https://github.com/MizuhoOkimoto/pajama-ssg.git)
+- Check Installation and Usage section below
 - Create your branch (git checkout -b issueNumber)
 - Add changed files (git add fileName)
 - Commit your changes (git commit -m 'Add GreatFeature')
@@ -22,7 +24,6 @@
 - Please run `npx eslint <changedFileName>` to find coding errors
 
 I will review your Pull Request and get back to you!
-Please read trough the below, and install and try some 😊
 
 ## What is Pajama-ssg?
 ### This is a Simple Static Site Generator (SSG) version_0.1.0
