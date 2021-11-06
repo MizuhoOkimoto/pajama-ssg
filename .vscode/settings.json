@@ -1,0 +1,14 @@
+{
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    // The default end of line character. Use \n for LF and \r\n for CRLF
+    "files.eol": "\n",
+    // When enabled, insert a final new line at the end of the file when saving it.
+    "files.insertFinalNewline": true
+  }
