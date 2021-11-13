@@ -4,7 +4,9 @@
   "description": "SSG project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --",
+    "test:watch": "jest --watch --",
+    "coverage": "jest --collectCoverage --",
     "build": "node ./src/index.js",
     "prettier": "npx prettier --write .",
     "eslint": "eslint --config .eslintrc.js",
@@ -26,6 +28,7 @@
   },
   "devDependencies": {
     "eslint": "^8.1.0",
+    "jest": "^27.3.1",
     "prettier": "2.4.1"
   }
 }

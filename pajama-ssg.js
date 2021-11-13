@@ -38,6 +38,7 @@ fs.mkdir("./dist", (err) => {
   console.log("dist directory is created.");
 });
 
+// c: config Read values from a Config JSON file
 if (argv.c) {
   try {
     const jsonFile = fs.readFileSync(path.normalize(argv.c));
@@ -110,7 +111,7 @@ argv.i.forEach((input) => {
               var result = md.render(line);
               text += result;
               //replaced
-              template = tempGenerate(argv.s, argv.l, title, titleName, text);
+              template = tempGenerate(argv.s, argv.l, title, "", text);
             });
 
             const compTemp = prettier.format(template, { parser: "html" });
@@ -188,4 +189,5 @@ argv.i.forEach((input) => {
       });
     }
   }
+  module.exports = distPath;
 });

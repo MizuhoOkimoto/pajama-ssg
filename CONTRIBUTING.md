@@ -19,6 +19,10 @@ Please read trough the below, and install and try some first😊
 - Push to the branch (git push origin issueNumber)
 - Open a Pull Request
 
+## Testing
+This project uses [Jest](https://jestjs.io/), so please run the test with `npm test`. 
+You can also chack coverage with `npm run coverage`. Adding test is also welcome!
+
 ## Before you commit, please check below
 - Please run `npm run prettier` to unify the code format
 - Please run `npx eslint <changedFileName>` to find coding errors

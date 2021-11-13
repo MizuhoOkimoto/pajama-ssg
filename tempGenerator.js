@@ -12,6 +12,7 @@ module.exports = tempGenerate = (
     : `<link rel="stylesheet" type="text/css" href="please_add_your_css_path" />`;
   let lang = argv_l ? `<html lang="${argv_l}">` : `<html lang="en-CA">`;
   let titleLine = title ? `<title>${title}</title>` : "";
+  let body = text ? `${text}` : "";
 
   var template = `
             <!doctype html>
