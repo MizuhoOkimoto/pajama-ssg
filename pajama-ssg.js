@@ -60,7 +60,6 @@ argv.i.forEach((input) => {
   }
 
   var stats = fs.statSync(input);
-  // console.log("Is txt file in a directory ? " + stats.isDirectory());
 
   if (stats.isDirectory()) {
     files = fs.readdirSync("./" + input);
@@ -189,5 +188,5 @@ argv.i.forEach((input) => {
       });
     }
   }
-  module.exports = distPath;
+  module.exports = distPath,input;
 });
