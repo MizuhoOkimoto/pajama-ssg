@@ -4,7 +4,7 @@ const tempGenerator = require("./tempGenerator");
 describe("Tests for generating html", () => {
   test('HTML should be generated', async () => {
     const generatedHTML = tempGenerator("", "", "", "", "");
-    expect(generatedHTML).toContain('<h5>');
+    expect(generatedHTML).toContain('<!doctype html>');
   });
   });
 
