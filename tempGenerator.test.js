@@ -1,7 +1,15 @@
 const tempGenerator = require("./tempGenerator");
+//const input = require("./pajama-ssg");
+
+describe("Tests for generating html", () => {
+  test('HTML should be generated', async () => {
+    const generatedHTML = tempGenerator("", "", "", "", "");
+    expect(generatedHTML).toContain('<!doctype html>');
+  });
+  });
+
 
 describe("Argument match tests", () => {
-
   test("no specified style", () => {
     expect(
       tempGenerator("", "language", "title", "titleName", "text")
