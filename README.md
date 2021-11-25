@@ -1,6 +1,6 @@
 # Pajama-ssg :zzz:
 
-### This is a Simple Static Site Generator (SSG) version_0.1.0
+### This is a Simple Static Site Generator (SSG) version_1.0.0
 
 All you have to do is provide the content in a text file, type the filename on the command line and run it! This Pajama-ssg will automatically convert it to an HTML file. It's so simple and easy that you can start creating web pages right away, even in your pajamas!
 
