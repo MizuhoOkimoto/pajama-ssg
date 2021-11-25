@@ -1,5 +1,5 @@
 {
-  "name": "node-ssg",
+  "name": "pajama-ssg",
   "version": "1.0.0",
   "description": "SSG project",
   "main": "index.js",
