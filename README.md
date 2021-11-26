@@ -1,6 +1,6 @@
 # Pajama-ssg :zzz:
 
-### This is a Simple Static Site Generator (SSG) version_1.0.0
+### This is a Simple Static Site Generator (SSG) version_1.0.1
 
 All you have to do is provide the content in a text file, type the filename on the command line and run it! This Pajama-ssg will automatically convert it to an HTML file. It's so simple and easy that you can start creating web pages right away, even in your pajamas!
 
@@ -30,7 +30,7 @@ All you have to do is provide the content in a text file, type the filename on t
   1. Open Terminal or CLI
   2. Go to the directory/folder you would like to add the program
   3. Type the `npm i pajama-ssg` command 
-  
+
   > npm package: https://www.npmjs.com/package/pajama-ssg
 
 <!-- 1. Clone the repo
