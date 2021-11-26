@@ -1,6 +1,6 @@
 {
   "name": "pajama-ssg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SSG project",
   "main": "index.js",
   "bin": "pajama-ssg.js",
