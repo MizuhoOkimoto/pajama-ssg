@@ -29,6 +29,6 @@ var argv = require("yargs/yargs")(process.argv.slice(2))
     alias: "v",
     describe: "this is version v1.0.1",
   })
-  .version("v", "version", "pajama-ssg v1.0.1").argv;
+  .argv;
 
 module.exports = argv;
