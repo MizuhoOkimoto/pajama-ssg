@@ -29,8 +29,9 @@ All you have to do is provide the content in a text file, type the filename on t
   ### Install npm package:
   1. Open Terminal or CLI
   2. Go to the directory/folder you would like to add the program
-  3. Type the `npm i pajama-ssg` command
-    > npm package: https://www.npmjs.com/package/pajama-ssg
+  3. Type the `npm i pajama-ssg` command 
+  
+  > npm package: https://www.npmjs.com/package/pajama-ssg
 
 <!-- 1. Clone the repo
 
