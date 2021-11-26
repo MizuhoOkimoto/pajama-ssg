@@ -26,8 +26,13 @@ All you have to do is provide the content in a text file, type the filename on t
   `$npm install markdown-it --save`
 
 ## Installation
+  ### Install npm package:
+  1. Open Terminal or CLI
+  2. Go to the directory/folder you would like to add the program
+  3. Type the `npm i pajama-ssg` command
+    > npm package: https://www.npmjs.com/package/pajama-ssg
 
-1. Clone the repo
+<!-- 1. Clone the repo
 
    `$git clone https://github.com/MizuhoOkimoto/pajama-ssg`
 
@@ -37,7 +42,7 @@ All you have to do is provide the content in a text file, type the filename on t
 
 3. Redirect to project directory
 
-   `$cd <\pajama-ssg>`
+   `$cd <\pajama-ssg>` -->
 
 ## Usage
 
@@ -55,16 +60,22 @@ You are able to pass a configuration JSON file.
 
 ## Help
 
-Options:
+| Option           | Function                                              |
+|------------------|-------------------------------------------------------|
+| -i, --input      | input file                                            |
+| -c, --config     | receive a config JSON file and get flags from it      |
+| -s, --stylesheet | input the path for generating the stylesheet path     |
+| -l, --lang       | input the language for the lang attribute             | 
+| -v, --version    | display version                                       |  
 
-```
+<!-- ```
   -i, --input       input file
   -c, --config      receive a config JSON file and get flags from it.
   -s, --stylesheet  input the path for generating the stylesheet path
   -l, --lang        input the language for the lang attribute
-  -v                version
-```
-
+  -v, --version     version
+``` -->
+ 
 ## Example
 
 **Input file**
