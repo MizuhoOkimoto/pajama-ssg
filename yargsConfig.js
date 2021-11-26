@@ -24,11 +24,11 @@ var argv = require("yargs/yargs")(process.argv.slice(2))
     alias: "c",
     describe: "Read values from a Config JSON file",
   })
-
-  .option("version", {
-    alias: "v",
-    describe: "this is version v1.0.1",
-  })
+  // .option("version", {
+  //   alias: "v",
+  //   describe: "this is version v1.0.1",
+  // })
+  .version()
   .argv;
 
 module.exports = argv;
