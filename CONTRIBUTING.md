@@ -46,54 +46,43 @@ All you have to do is provide the content in a text file, type the filename on t
 ## Option Features
 
 - type `-s` or `-stylesheet` on the command line, it will be converted to a style tag link
-- [Update] type `-l` or `-lang` on the command line, it will generate the lang attribute on the root <html> element
-  -type `-c` or `--config` on the command line, it will get the flag values from your config JSON file.
-- By installing Prettier, the converted HTML will be formatted
-
-  `$npm install --save-dev prettier`
-
-- For Using full markdown feature, please install npm below after step 3 of the Installation.
-  `$npm install markdown-it --save`
+- type `-l` or `-lang` on the command line, it will generate the lang attribute on the root <html> element
+- type `-c` or `--config` on the command line, it will get the flag values from your config JSON file.
 
 ## Installation
+### Install npm package:
+  - Open Terminal or CLI
+  - Go to the directory/folder you would like to add this program
+  - Type the `npm i pajama-ssg` command 
 
-1. Clone the repo
-
-   `$git clone https://github.com/MizuhoOkimoto/pajama-ssg`
-
-2. Install Node.js
-
-   `$npm install`
-
-3. Redirect to project directory
-
-   `$cd <\pajama-ssg>`
+  > npm package: https://www.npmjs.com/package/pajama-ssg
 
 ## Usage
 
-`$node pajama-ssg -i <path>` or `$node pajama-ssg -input <path>`
-
+`$npx pajama-ssg -i <path>` or `$npx pajama-ssg -input <path>`
     These allows you to the text file to a HTML file. Please type file name into the <path>.
 
-`$node pajama-ssg -i <folder name>`
-If your text file is in a folder, you can type folder name instead of text file name.
-This SSG tool checkes inside the folder.
-`$node pajama-ssg -input <path> -stylesheet <URL>` or `$node pajama-ssg -i <path> -s <URL>`
-You are able to add stylesheet. Please type the URL or path into the <URL>.
-`$node pajama-ssg -c config-file.json`
-You are able to pass a configuration JSON file.
+`$npx pajama-ssg -i <folder name>`
+    If your text file is in a folder, you can type folder name instead of text file name.
+    This SSG tool checkes inside the folder.
+
+`$npx pajama-ssg -input <path> -stylesheet <URL>` or `$npx pajama-ssg -i <path> -s <URL>`
+    You are able to add stylesheet. Please type the URL or path into the <URL>.
+
+`$npx pajama-ssg -c config-file.json`
+    You are able to pass a configuration JSON file.
 
 ## Help
 
 Options:
 
-```
-  -i, --input       input file
-  -c, --config      receive a config JSON file and get flags from it.
-  -s, --stylesheet  input the path for generating the stylesheet path
-  -l, --lang        input the language for the lang attribute
-  -v                version
-```
+| Option           | Function                                              |
+|------------------|-------------------------------------------------------|
+| -i, --input      | input file                                            |
+| -c, --config     | receive a config JSON file and get flags from it      |
+| -s, --stylesheet | input the path for generating the stylesheet path     |
+| -l, --lang       | input the language for the lang attribute             |
+| -v, --version    | display version                                       | 
 
 ## Example
 
@@ -103,8 +92,8 @@ Options:
 
 **Type the on command line**
 
-`node pajama-ssg -i test.txt -s https://cdn.jsdelivr.net/npm/water.css@2/out/water.css`
-(I used water.css)
+`npx pajama-ssg -i test.txt -s https://cdn.jsdelivr.net/npm/water.css@2/out/water.css`
+(This example uses water.css)
 
 **./test.txt**
 
